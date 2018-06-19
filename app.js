@@ -4,9 +4,11 @@
 Product.myProducts = [];
 Product.names = [];
 Product.lastDisplayed = [];
+Product.chartVotes = [];
+Product.chartNames = [];
 Product.ulEl = document.getElementById('results');
-Product.counter = 0;
 Product.sectEl = document.getElementById('sect-el');
+Product.counter = 0;
 
 //constructor
 function Product(name, filepath) {
@@ -78,6 +80,14 @@ Product.showResults = function() {
   }
 };
 
+// function to tally up votes for chart
+Product.tallyVotesForChart = function() {
+  for (var i = 0; i < Product.myProducts.length; i++) {
+    Product.totalVotes[i] = Product.myProducts[i].score;
+    Product.chartNames[i] = Product.myProducts[i].name;
+  }
+};
+
 // event handler
 Product.voteHandler = function(event) {
   Product.counter++;
@@ -91,6 +101,7 @@ Product.voteHandler = function(event) {
   if (Product.counter > 24) {
     Product.sectEl.removeEventListener('click', Product.voteHandler);
     Product.showResults();
+    Product.tallyVotesForChart();
     alert('The survey is now completed, thank you for participating!');
   } else {
     Product.randomProduct();
