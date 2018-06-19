@@ -7,6 +7,12 @@ header {
   height: 90px;
 }
 
+header img {
+  height: 80px;
+  margin: 0;
+  display: inline;
+}
+
 h1 {
  display: inline;
  font-size: 40px;
@@ -30,7 +36,7 @@ section h2 {
   text-align: center;
   }
 
-ol li {
+#ulHeader li {
   float: right;
   padding: 7px;
   list-style: none;
@@ -58,7 +64,7 @@ img:nth-of-type(1) {
   margin-left: 220px;
 }
 
-div {
+#sec-three {
   text-align: center;
   margin-top: 10px;
   margin-left: 200px;
@@ -67,10 +73,11 @@ div {
   border: 3px solid black;
 }
 
+.sThree h1 {
+  color: black;
+}
+
 ul li {
   margin:5px;
 }
 
-div h1 {
-  color: black;
-}
