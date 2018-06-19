@@ -3,7 +3,9 @@
 //global variables
 Product.myProducts = [];
 
-Product.imageElements = [Product.imgElementOne = document.getElementById('product-pic-one'), Product.imgElementTwo = document.getElementById('product-pic-two'), Product.imgElementThree = document.getElementById('product-pic-three')];
+Product.imgElementOne = document.getElementById('product-pic-one'); 
+Product.imgElementTwo = document.getElementById('product-pic-two');
+Product.imgElementThree = document.getElementById('product-pic-three');
 // var counter = 0;
 
 //constructor
@@ -38,12 +40,12 @@ new Product('assets/wine-glass.jpg');
 console.log(Product.myProduct);
 
 Product.randomProduct = function() {
-  for (var i = 0; i < 2; i++) {
-    var ranProductNum = Math.random() * Product.myProducts.length;
-    var ranProductIndex = Math.floor(ranProductNum);
-    var theProduct = Product.myProducts[ranProductIndex];
-    Product.imageElements[i] = theProduct;
-  }
+  // for (var i = 0; i < 2; i++) {
+  var ranProductNum = Math.random() * Product.myProducts.length;
+  var ranProductIndex = Math.floor(ranProductNum);
+  var theProduct = Product.myProducts[ranProductIndex];
+  Product.imgElementOne = theProduct;
+  // }
 };
 
 // function counterUp() {
@@ -53,6 +55,6 @@ Product.randomProduct = function() {
 
 // productForm.addEventListener('submit', counterUp);
 Product.imgElementOne.addEventListener('submit', Product.randomProduct);
-Product.imgElementTwo.addEventListener('submit', Product.randomProduct);
-Product.imgElementThree.addEventListener('submit', Product.randomProduct);
-Product.randomProduct();
+// Product.imgElementTwo.addEventListener('submit', Product.randomProduct);
+// Product.imgElementThree.addEventListener('submit', Product.randomProduct);
+
