@@ -1,14 +1,15 @@
 'use strict';
 
 //global variables
-Product.myProducts = [];
+Product.myProducts = parseInt(localStorage.getItem('products')) || [];
 Product.names = [];
 Product.lastDisplayed = [];
 Product.chartVotes = [];
 Product.chartNames = [];
 Product.ulEl = document.getElementById('results');
 Product.sectEl = document.getElementById('sect-el');
-Product.counter = 0;
+Product.counter = parseInt(localStorage.getItem('counter')) || 0;
+Product.storageArr = [];
 
 //constructor
 function Product(name, filepath) {
@@ -90,7 +91,8 @@ Product.tallyVotesForChart = function() {
 // event handler
 Product.voteHandler = function(event) {
   Product.counter++;
-  console.log(Product.counter);
+  persistentClicks();
+  persistentVotes();
   for (var i = 0; i < Product.myProducts.length; i++) {
     if (event.target.alt === Product.myProducts[i].name) {
       Product.myProducts[i].score++;
@@ -98,12 +100,14 @@ Product.voteHandler = function(event) {
   }
 
   // event remover
-  if (Product.counter > 24) {
+  if (Product.counter > 49) {
     Product.sectEl.removeEventListener('click', Product.voteHandler);
     Product.showResults();
     Product.tallyVotesForChart();
     Product.generateChart();
     Product.hideImages();
+    localStorage.removeItem('counter');
+    localStorage.removeItem('products');
     alert('The survey is now completed, thank you for participating!');
   } else {
     Product.randomProduct();
@@ -145,4 +149,14 @@ Product.generateChart = function() {
       }
     }
   });
+};
+
+// local storage click accumulator
+var persistentClicks = function() {
+  localStorage.setItem('counter', JSON.stringify(Product.counter));
+};
+
+// localstorage vote accumulator
+var persistentVotes = function() {
+  localStorage.setItem('products', JSON.stringify(Product.myProducts));
 };

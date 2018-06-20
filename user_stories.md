@@ -10,6 +10,8 @@
 2. As a developer I want to make sure no images are repeated immediately following a group of 3 in which they were presented to make sure all selections are represented fairly.
 3. As a developer I want to make sure that all images are given near equal space in the group of 3 images so that no focus group members are persuaded to vote for an image based on the amount of attention it grabs from size.
 4. As a developer I want to create a constructor so that the 20 product images are cycled through from an array of the products as objects.
+5. As a developer I want a chart to generate  following the completed survey that shows the results in a clear and visually appealing manner.
+6. As a developer I want to create local storage functionality so that the results will be persistent through browser refreshes and extended testing sessions (leaving the work station and comign back later for example).
 
 ## *Focus Group Participant Stories*
 1. As a focus group member I want to make decisions that are unaffected by my previous actions so that the market research team is given useful data.
