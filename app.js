@@ -80,10 +80,16 @@ Product.showResults = function() {
   }
 };
 
+<<<<<<< HEAD
 // function to tally up votes for chart
 Product.tallyVotesForChart = function() {
   for (var i = 0; i < Product.myProducts.length; i++) {
     Product.totalVotes[i] = Product.myProducts[i].score;
+=======
+Product.tallyVotesForChart = function() {
+  for (var i = 0; i < Product.myProducts.length; i++) {
+    Product.chartVotes[i] = Product.myProducts[i].score;
+>>>>>>> cd11387305a767c93560ef371e48432dec6db50f
     Product.chartNames[i] = Product.myProducts[i].name;
   }
 };
@@ -102,6 +108,10 @@ Product.voteHandler = function(event) {
     Product.sectEl.removeEventListener('click', Product.voteHandler);
     Product.showResults();
     Product.tallyVotesForChart();
+<<<<<<< HEAD
+=======
+    Product.generateChart();
+>>>>>>> cd11387305a767c93560ef371e48432dec6db50f
     alert('The survey is now completed, thank you for participating!');
   } else {
     Product.randomProduct();
@@ -110,3 +120,30 @@ Product.voteHandler = function(event) {
 
 Product.sectEl.addEventListener('click', Product.voteHandler);
 Product.randomProduct();
+
+Product.generateChart = function() {
+  var context = document.getElementById('chart').getContext('2d');
+  var productChart = new Chart(context, { //eslint-disable-line
+    type: 'bar',
+    data : {
+      labels: Product.chartNames,
+      datasets: [{
+        label: 'Votes Per Product',
+        data: Product.chartVotes,
+        backgroundColors: ['rgba(100,200,67,0.5)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)'
+        ],
+        borderColor: ['rgba(100,200,67,0.5)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)'
+        ]
+      }],
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          tick: {
+            beginAtZero: true,
+          }
+        }]
+      }
+    }
+  });
+};
