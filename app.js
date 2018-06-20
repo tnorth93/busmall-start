@@ -96,17 +96,27 @@ Product.voteHandler = function(event) {
       Product.myProducts[i].score++;
     }
   }
+
   // event remover
   if (Product.counter > 24) {
     Product.sectEl.removeEventListener('click', Product.voteHandler);
     Product.showResults();
     Product.tallyVotesForChart();
     Product.generateChart();
+    Product.hideImages();
     alert('The survey is now completed, thank you for participating!');
   } else {
     Product.randomProduct();
   }
 };
+
+// hides the pictures after the 25th vote
+Product.hideImages = function() {
+  Product.imgElementLeft.classList.add('hide');
+  Product.imgElementCenter.classList.add('hide');
+  Product.imgElementRight.classList.add('hide');
+};
+
 
 Product.sectEl.addEventListener('click', Product.voteHandler);
 Product.randomProduct();
@@ -120,10 +130,9 @@ Product.generateChart = function() {
       datasets: [{
         label: 'Votes Per Product',
         data: Product.chartVotes,
-        backgroundColors: ['rgba(101,200,67,0.5)', 'rgba(101,200,68,0.5)', 'rgba(101,202,67,0.5)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)'
+        backgroundColor: ['rgba(101,200,67,0.5)', 'rgba(101,200,68,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)'
         ],
-        borderColor: ['rgba(100,200,67,0.5)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)', 'rgb(100,200,67)'
-        ]
+        borderColor: []
       }],
     },
     options: {
