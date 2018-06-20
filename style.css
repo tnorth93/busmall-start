@@ -7,11 +7,6 @@ header {
   height: 90px;
 }
 
-header img {
-  height: 80px;
-  margin: 0;
-  display: inline;
-}
 h1 {
  display: inline;
  font-size: 40px;
@@ -78,5 +73,9 @@ img:nth-of-type(1) {
 
 ul li {
   margin:5px;
+}
+
+.hide {
+  display: none;
 }
 
