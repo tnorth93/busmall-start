@@ -99,10 +99,6 @@ Product.voteHandler = function(event) {
     }
   }
 
-  // var storeScore = function() {
-  //   localStorage.clicks = 
-  // }
-
   // event remover
   if (Product.counter > 49) {
     Product.sectEl.removeEventListener('click', Product.voteHandler);
@@ -163,4 +159,4 @@ var persistentClicks = function() {
 // localstorage vote accumulator
 var persistentVotes = function() {
   localStorage.setItem('products', JSON.stringify(Product.myProducts));
-}
+};
