@@ -21,26 +21,26 @@ function Product(name, filepath) {
 }
 
 //product instances
-new Product('bag', 'assets/bag.jpg');
-new Product('banana', 'assets/banana.jpg');
-new Product('bathroom', 'assets/bathroom.jpg');
-new Product('boots', 'assets/boots.jpg');
-new Product('breakfast', 'assets/breakfast.jpg');
-new Product('bubblegum', 'assets/bubblegum.jpg');
-new Product('chair', 'assets/chair.jpg');
-new Product('cthulhu', 'assets/cthulhu.jpg');
-new Product('dog-duck', 'assets/dog-duck.jpg');
-new Product('dragon', 'assets/dragon.jpg');
-new Product('pen', 'assets/pen.jpg');
-new Product('pet-sweep', 'assets/pet-sweep.jpg');
-new Product('scissors', 'assets/scissors.jpg');
-new Product('shark', 'assets/shark.jpg');
-new Product('sweep', 'assets/sweep.png');
-new Product('tauntaun', 'assets/tauntaun.jpg');
-new Product('unicorn', 'assets/unicorn.jpg');
-new Product('usb', 'assets/usb.gif');
-new Product('water-can', 'assets/water-can.jpg');
-new Product('wine-glass', 'assets/wine-glass.jpg');
+new Product('R2D2 Bag', 'assets/bag.jpg');
+new Product('Banana', 'assets/banana.jpg');
+new Product('Bathroom', 'assets/bathroom.jpg');
+new Product('Boots', 'assets/boots.jpg');
+new Product('Breakfast', 'assets/breakfast.jpg');
+new Product('Bubblegum', 'assets/bubblegum.jpg');
+new Product('Chair', 'assets/chair.jpg');
+new Product('Cthulhu', 'assets/cthulhu.jpg');
+new Product('Dog-duck', 'assets/dog-duck.jpg');
+new Product('Dragon', 'assets/dragon.jpg');
+new Product('Pen', 'assets/pen.jpg');
+new Product('Pet-sweep', 'assets/pet-sweep.jpg');
+new Product('Scissors', 'assets/scissors.jpg');
+new Product('Shark', 'assets/shark.jpg');
+new Product('Sweep', 'assets/sweep.png');
+new Product('Tauntaun', 'assets/tauntaun.jpg');
+new Product('Unicorn', 'assets/unicorn.jpg');
+new Product('USB', 'assets/usb.gif');
+new Product('Water-can', 'assets/water-can.jpg');
+new Product('Wine-glass', 'assets/wine-glass.jpg');
 
 //access img eles from the DOM
 Product.imgElementLeft = document.getElementById('img-element-left'); 
@@ -130,7 +130,7 @@ Product.generateChart = function() {
       datasets: [{
         label: 'Votes Per Product',
         data: Product.chartVotes,
-        backgroundColor: ['rgba(101,200,67,0.5)', 'rgba(101,200,68,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)', 'rgba(101,202,67,0.5)'
+        backgroundColor: ['rgba(101,200,67,0.5)', 'rgba(220,20,60,0.5)', 'rgba(255,69,0,0.5)', 'rgba(127,255,0,0.5)', 'rgba(0,255,127,0.5)', 'rgba(255,215,0,0.5)', 'rgba(60,179,113,0.5)', 'rgba(47,79,79,0.5)', 'rgba(0,255,255,0.5)', 'rgba(30,144,255,0.5)', 'rgba(127,255,212,0.5)', 'rgba(0,0,139,0.5)', 'rgba(138,43,226,0.5)', 'rgba(139,0,139,0.5)', 'rgba(186,85,211,0.5)', 'rgba(255,0,255,0.5)', 'rgba(255,20,147,0.5)', 'rgba(112,128,144,0.5)', 'rgba(255,127,80,0.5)', 'rgba(210,105,30,0.5)'
         ],
         borderColor: []
       }],
