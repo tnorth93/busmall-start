@@ -2,13 +2,13 @@
 
 //global variables
 Product.myProducts = parseInt(localStorage.getItem('products')) || [];
+Product.counter = parseInt(localStorage.getItem('counter')) || 0;
 Product.names = [];
 Product.lastDisplayed = [];
 Product.chartVotes = [];
 Product.chartNames = [];
 Product.ulEl = document.getElementById('results');
 Product.sectEl = document.getElementById('sect-el');
-Product.counter = parseInt(localStorage.getItem('counter')) || 0;
 Product.storageArr = [];
 
 //constructor
@@ -156,7 +156,7 @@ var persistentClicks = function() {
   localStorage.setItem('counter', JSON.stringify(Product.counter));
 };
 
-// localstorage vote accumulator
+// local storage vote accumulator
 var persistentVotes = function() {
   localStorage.setItem('products', JSON.stringify(Product.myProducts));
 };
